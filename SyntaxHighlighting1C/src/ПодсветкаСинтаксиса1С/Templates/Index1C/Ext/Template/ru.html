@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><title>CodeMirror: 1C mode</title><meta http-equiv="content-type" content="text/html;charset=utf-8"></meta><meta http-equiv="X-UA-Compatible" content="IE=10"></meta><style> 
+
+&css&
+
+</style><script> 
+
+&codemirror&
+&OneCfold&
+&foldcode&
+&foldgutter&
+&OneC&
+
+</script></head><body>
+  <textarea id="code" name="code"></textarea><script type="text/javascript">
+    codeArea = document.getElementById('code');
+    var editor = CodeMirror.fromTextArea(codeArea, {
+      lineNumbers: true,
+      indentWithTabs: true,
+      styleActiveLine: true,
+      lineWrapping: true,
+      smartIndent: true,
+      electricChars:false,
+      autofocus: true,
+      indentUnit: 4,
+      readOnly: false,
+      highlightSelectionMatches: {showToken: /[0-9a-zA-Zа-яёА-ЯЁ&]/, annotateScrollbar: false},
+      mode: "text/x-1c",
+      theme: '1c',
+		  foldGutter: true,
+		  gutters: ['CodeMirror-linenumbers', 'CodeMirror-foldgutter']
+    });
+    var content = '';
+    editor.setValue(content);
+    editor.foldCode(0);
+    for (var i =0; i< editor.lineCount(); i++) { editor.indentLine(i); }
+    editor.setSize("100%","100%");
+  </script></body></html>
