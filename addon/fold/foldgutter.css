@@ -20,14 +20,14 @@
   cursor: pointer;
 }
 .CodeMirror-foldgutter-open:after {
-  content: "\229E";
+  content: "\229F";
   font-size: large;
   color: gray;
   /* CodeMirror-line  */
   /* align-content: stretch; */
 }
 .CodeMirror-foldgutter-folded:after {
-  content: "\229F";
+  content: "\229E";
   font-size: large;
   color: gray;
   /* align-content: stretch; */
