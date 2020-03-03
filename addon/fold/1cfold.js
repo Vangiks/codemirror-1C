@@ -32,16 +32,16 @@
       }
     }
     const startTokens = [
-      'процедура', 'функция'
+      'процедура', 'функция', '#область'
     ]
     const startTokensEn = [
-      'procedure', 'function'
+      'procedure', 'function', '#region'
     ]
     const endTokens = [
-      'конецпроцедуры', 'конецфункции'
+      'конецпроцедуры', 'конецфункции', '#конецобласти'
     ]
     const endTokensEn = [
-      'endprocedure', 'endfunction'
+      'endprocedure', 'endfunction', '#endregion'
     ]
     var startCh = null
     for (let k = 0; k < startTokens.length; k++) {
