@@ -31,6 +31,7 @@
         at = found - 1;
       }
     }
+
     const startTokens = [
       'процедура', 'функция', '#область'
     ]
@@ -43,6 +44,7 @@
     const endTokensEn = [
       'endprocedure', 'endfunction', '#endregion'
     ]
+    
     var startCh = null
     for (let k = 0; k < startTokens.length; k++) {
       let startLenght = 0;
@@ -64,6 +66,13 @@
               if (l < curText.length && curText[l+1] === '/' && curText[l] === '/') {
                 break; // comment!
               }
+
+              // TODO
+              if (startTokens[k].indexOf("#") != -1 && startTokensEn[k].indexOf("#") != -1){
+                startCh = curText.length;
+                break;
+              }
+
               openbrackets += curText[l] == '(' ? 1 : 0;
               closebrackets += curText[l] == ')' ? 1 : 0;
               if (openbrackets == closebrackets && openbrackets > 0) {
@@ -77,7 +86,6 @@
             }
           }
       }
-
 
      if (startCh != null) {
         var count = 1, lastLine = cm.lastLine(), end, endCh;
