@@ -68,9 +68,9 @@
               }
 
               // TODO
-              if (startTokens[k].indexOf("#") != -1 && startTokensEn[k].indexOf("#") != -1){
-                startCh = curText.length;
-                break;
+              if (startTokens[k].toLowerCase().indexOf("#область") != -1 && startTokensEn[k].toLowerCase().indexOf("#region") != -1){               
+                  startCh = curText.length;
+                  break;
               }
 
               openbrackets += curText[l] == '(' ? 1 : 0;
@@ -83,6 +83,11 @@
             if (openbrackets == closebrackets  && openbrackets > 0) {
               line = j;
               break;
+            }
+            if (startTokens[k].toLowerCase().indexOf("#область") != -1 
+              && startTokensEn[k].toLowerCase().indexOf("#region") != -1
+              && startCh == curText.length){
+                break;
             }
           }
       }
